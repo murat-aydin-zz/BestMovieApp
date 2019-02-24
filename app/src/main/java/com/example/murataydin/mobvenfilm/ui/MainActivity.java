@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements MovieRecyclerView
         CookieBar.build(MainActivity.this)
                 .setLayoutGravity(Gravity.BOTTOM)
                 .setBackgroundColor(android.R.color.holo_blue_dark)
-                .setTitle("Merhaba, umarim begenirsiniz :)")
+                .setTitle(getString(R.string.appinfo))
                 .show();
 
         dataSource = new RealmDataSource();

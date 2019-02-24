@@ -5,6 +5,16 @@
     <string name="highest_rated">Top Rated</string>
     <string name="spinner">Sort By</string>
     <string name="search_title">Search</string>
+    <string name="appinfo">Merhaba, umarim begenirsiniz :)</string>
+
+
+    <string name="fav_add">Film favorilere eklendi!</string>
+    <string name="fav_msg">Offline modda favorilerini gorebilirsin.</string>
+
+    <string name="fav_rmv">Film favorilerden silindi!</string>
+    <string name="fav_rmv_msg">Artik burda olmayacak :(</string>
+
+
 
     <string-array name="sort_criteria">
         <item>Most Popular</item>

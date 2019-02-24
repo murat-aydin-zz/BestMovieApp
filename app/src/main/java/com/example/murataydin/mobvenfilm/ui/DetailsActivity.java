@@ -80,7 +80,6 @@ public class DetailsActivity extends AppCompatActivity {
     TextView mPlotTextView;
     @BindView(R.id.poster_image_view)
     ImageView mPosterImageView;
-    RecyclerView mCastRecyclerView;
 
     @BindView(R.id.fav_button) FloatingActionButton mFavoriteButton;
     @BindView(R.id.backdrop_iv)
@@ -324,14 +323,14 @@ public class DetailsActivity extends AppCompatActivity {
                 mFavoriteButton.setImageResource(R.drawable.ic_favorite_border);
                 CookieBar.build(DetailsActivity.this)
                         .setBackgroundColor(android.R.color.holo_blue_dark)
-                        .setTitle("Film favorilere eklendi!")
-                        .setMessage("Offline modda favorilerini gorebilirsin.")
+                        .setTitle(getString(R.string.fav_add))
+                        .setMessage(getString(R.string.fav_msg))
                         .show();
             } else {
                 CookieBar.build(DetailsActivity.this)
                         .setBackgroundColor(android.R.color.holo_red_dark)
-                        .setTitle("Film favorilerden silindi!")
-                        .setMessage("Artik burda olmayacak :(")
+                        .setTitle(getString(R.string.fav_rmv))
+                        .setMessage(getString(R.string.fav_rmv_msg))
                         .show();
                 dataSource.deleteMovieFromFavs(transactedMovie);
                 mFavoriteButton.setImageResource(R.drawable.ic_favorite_border);
