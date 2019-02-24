@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.murataydin.mobvenfilm"
+        minSdkVersion 17
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildTypes.each { it.buildConfigField 'String', 'TMDB_API_TOKEN', '"5886466a00f95704b5d9724a55c6c579"' }
+
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+
+}
+ext {
+    supportVer = '28.0.0'
+    constraintVer = '1.1.2'
+    glideVer = '4.7.1'
+    butterknifeVer = '8.8.1'
+    floatingsearchviewVer = '2.1.1'
+    retrofitVer = '2.4.0'
+    gsonVer = '2.8.5'
+    cookiebar2Ver = '1.0.9'
+    rvAnimVer = '2.3.0'
+    expandTextVer = '1.0.5'
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "com.android.support.constraint:constraint-layout:$constraintVer"
+    implementation "com.android.support:appcompat-v7:$supportVer"
+    implementation "com.android.support:support-v4:$supportVer"
+    implementation "com.android.support:cardview-v7:$supportVer"
+    implementation "com.android.support:design:$supportVer"
+    implementation "com.android.support:recyclerview-v7:$supportVer"
+
+    implementation "com.github.bumptech.glide:glide:$glideVer"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glideVer"
+    implementation "com.jakewharton:butterknife:$butterknifeVer"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknifeVer"
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVer"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVer"
+    implementation "com.google.code.gson:gson:$gsonVer"
+    implementation "org.aviran.cookiebar2:cookiebar2:$cookiebar2Ver"
+    implementation "jp.wasabeef:recyclerview-animators:$rvAnimVer"
+    implementation "at.blogc:expandabletextview:$expandTextVer"
+    implementation "com.github.arimorty:floatingsearchview:$floatingsearchviewVer"
+}
